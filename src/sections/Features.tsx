@@ -1,11 +1,6 @@
 "use client";
 import Tag from "@/components/Tag";
-import FeatureCard from "@/components/FeatureCard";
-import avatar1 from "@/assets/images/avatar-ashwin-santiago.jpg";
-import avatar2 from "@/assets/images/avatar-lula-meyers.jpg";
-import avatar3 from "@/assets/images/avatar-florence-shaw.jpg";
 import Image from "next/image";
-import Avatar from "@/components/Avatar";
 import { useRef } from "react";
 import { useInView, motion } from "framer-motion";
 import feature11img from "@/assets/images/Feature111.png";

@@ -1,10 +1,4 @@
-import Button from "@/components/Button";
-import designExampleImage from "@/assets/images/design-example-1.png";
-import designExampleImage2 from "@/assets/images/design-example-2.png";
-import Pointer from "@/components/Pointer";
-import PromptUI from "@/assets/images/ChatUI.png";
 import bgImage from "@/assets/images/bgIm.png";
-import Image from "next/image";
 
 export default function Hero() {
     return (
