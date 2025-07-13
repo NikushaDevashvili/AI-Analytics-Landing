@@ -33,7 +33,7 @@ export default function Features() {
                     transition={{ duration: 0.6, ease: "easeOut" }}
                     className="text-center mt-6"
                 >
-                    <h2 className="md:text-5xl sm:text-4xl lg:text-5xl font-roman font-iowan">
+                    <h2 className="md:text-5xl sm:text-3xl lg:text-5xl font-roman font-iowan">
                         Get Instant{" "}
                         <span className="text-amber-950">Answers</span>
                     </h2>
@@ -75,7 +75,7 @@ export default function Features() {
                     transition={{ duration: 0.6, ease: "easeOut" }}
                     className="text-center mt-56"
                 >
-                    <h2 className="md:text-5xl sm:text-4xl lg:text-5xl font-roman font-iowan">
+                    <h2 className="md:text-5xl sm:text-3xl lg:text-5xl font-roman font-iowan">
                         Identify Critical{" "}
                         <span className="text-amber-950">Drop-Offs</span>
                     </h2>
@@ -116,7 +116,7 @@ export default function Features() {
                     transition={{ duration: 0.5, ease: "easeOut" }}
                     className="text-center mt-56"
                 >
-                    <h2 className="md:text-5xl sm:text-4xl lg:text-5xl font-roman font-iowan">
+                    <h2 className="md:text-5xl sm:text-3xl lg:text-5xl font-roman font-iowan">
                         Monitor your analytics{" "}
                         <span className="text-amber-950">24/7</span>
                     </h2>

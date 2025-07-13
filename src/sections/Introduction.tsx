@@ -2,7 +2,7 @@
 
 "use client";
 
-import { useRef, useMemo } from "react";
+import { useRef } from "react";
 import { motion, useScroll, useTransform, MotionValue } from "framer-motion";
 import Tag from "@/components/Tag";
 import ga4Img from "@/assets/images/GA4img.png";
@@ -62,32 +62,6 @@ const paragraph2: (string | { type: "img"; src: string; alt: string })[] = [
     "lost.",
 ];
 
-// --- Custom hook to generate transforms safely ---
-function useAnimatedTransforms(
-    scrollYProgress: MotionValue<number>,
-    length: number,
-    offsetStart = 0
-) {
-    return useMemo(() => {
-        const opacityArray: MotionValue<number>[] = [];
-        const translateYArray: MotionValue<number>[] = [];
-
-        for (let index = 0; index < length; index++) {
-            const i = index + offsetStart;
-            const start = i * 0.01;
-            const end = start + 0.25;
-            opacityArray.push(
-                useTransform(scrollYProgress, [start, end], [0, 1])
-            );
-            translateYArray.push(
-                useTransform(scrollYProgress, [start, end], [20, 0])
-            );
-        }
-
-        return { opacityArray, translateYArray };
-    }, [scrollYProgress, length, offsetStart]);
-}
-
 // --- Reusable Word-by-Word Scroll Animation Component ---
 function ScrollAnimatedWords({
     content,
@@ -100,10 +74,21 @@ function ScrollAnimatedWords({
     offsetStart?: number;
     className?: string;
 }) {
-    const { opacityArray, translateYArray } = useAnimatedTransforms(
-        scrollYProgress,
-        content.length,
-        offsetStart
+    const opacityArray = Array.from({ length: content.length }, (_, index) => {
+        const i = index + offsetStart;
+        const start = i * 0.01;
+        const end = start + 0.25;
+        return useTransform(scrollYProgress, [start, end], [0, 1]);
+    });
+
+    const translateYArray = Array.from(
+        { length: content.length },
+        (_, index) => {
+            const i = index + offsetStart;
+            const start = i * 0.01;
+            const end = start + 0.25;
+            return useTransform(scrollYProgress, [start, end], [20, 0]);
+        }
     );
 
     return (
@@ -171,7 +156,7 @@ export default function Introduction() {
                 </div>
 
                 {/* Scroll Trigger Zone */}
-                <div className="h-[250vh]" ref={scrollRef}></div>
+                <div className="h-[200vh]" ref={scrollRef}></div>
             </div>
         </section>
     );

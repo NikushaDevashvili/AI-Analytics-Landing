@@ -1,31 +1,36 @@
+"use client";
+
 import Tag from "@/components/Tag";
+import { useState } from "react";
 import { twMerge } from "tailwind-merge";
+import { AnimatePresence, motion } from "framer-motion";
 
 const faqs = [
     {
-        question: "How is Layers different from other design tools?",
-        answer: "Unlike traditional design tools, Layers prioritizes speed and simplicity without sacrificing power. Our intelligent interface adapts to your workflow, reducing clicks and keeping you in your creative flow.",
+        question:
+            "How is this different from tools like GA4, Clarity, or Hotjar?",
+        answer: "Most tools show you data—they don’t tell you what to do with it. We plug into GA4 and Clarity to act as your AI teammate: surfacing UX issues, explaining causes, and saving your team hours of manual analysis. No dashboards. No tagging. Just answers.",
     },
     {
-        question: "Is there a learning curve?",
-        answer: "Layers is designed to feel intuitive from day one. Most designers are productive within hours, not weeks. We also provide interactive tutorials and comprehensive documentation to help you get started.",
+        question: "Do we still need a data or research team?",
+        answer: "Absolutely. We’re here to amplify—not replace—your team’s impact. Think of us as a frontline scout: flagging UX problems, surfacing patterns, and giving your team a head start on deeper analysis and action.",
     },
     {
-        question: "How do you handle version control?",
-        answer: "Every change in Layers is automatically saved and versioned. You can review history, restore previous versions, and create named versions for important milestones.",
+        question: "How long does it take to see value?",
+        answer: "Most users connect their tools in under 2 minutes and get their first actionable insight within 90 seconds. No setup, no learning curve—just signal over noise from day one.",
     },
     {
-        question: "Can I work offline?",
-        answer: "Yes! Layers includes a robust offline mode. Changes sync automatically when you're back online, so you can keep working anywhere.",
+        question: "How accurate are the AI insights?",
+        answer: "Every insight is rooted in real GA4 events and Clarity sessions. Our AI agents don’t guess—they correlate patterns across your existing tools and explain them with evidence. You can trace every suggestion back to real user behavior.",
     },
     {
-        question: "How does Layers handle collaboration?",
-        answer: "Layers is built for collaboration. You can invite team members to your projects, share feedback, and work together in real-time.",
+        question: "Is our data secure?",
+        answer: "Yes. We never access or store PII. All analysis runs on anonymized event data through secure, read-only connections. We’re committed to full SOC 2 compliance as we scale.",
     },
 ];
 
 export default function Faqs() {
-    const selectedIndex = 0;
+    const [selectedIndex, setSelectedIndex] = useState<number | undefined>();
     return (
         <section className="py-24">
             <div className="container">
@@ -41,7 +46,16 @@ export default function Faqs() {
                             key={faq.question}
                             className="bg-neutral-100 rounded-2xl border-black/10 p-6 w-full max-w-2xl"
                         >
-                            <div className="flex justify-between items-center">
+                            <button
+                                className="flex justify-between items-center w-full text-left"
+                                onClick={() =>
+                                    setSelectedIndex(
+                                        selectedIndex === faqIndex
+                                            ? undefined
+                                            : faqIndex
+                                    )
+                                }
+                            >
                                 <h3 className="font-medium">{faq.question}</h3>
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
@@ -54,7 +68,7 @@ export default function Faqs() {
                                     strokeLinecap="round"
                                     strokeLinejoin="round"
                                     className={twMerge(
-                                        "feather feather-plus",
+                                        "feather feather-plus transition duration-300",
                                         selectedIndex === faqIndex &&
                                             "rotate-45"
                                     )}
@@ -62,15 +76,24 @@ export default function Faqs() {
                                     <line x1="12" y1="5" x2="12" y2="19"></line>
                                     <line x1="5" y1="12" x2="19" y2="12"></line>
                                 </svg>
-                            </div>
-                            <div
-                                className={twMerge(
-                                    "mt-6",
-                                    selectedIndex !== faqIndex && "hidden"
+                            </button>
+                            <AnimatePresence initial={false}>
+                                {selectedIndex === faqIndex && (
+                                    <motion.div
+                                        initial={{ height: 0, marginTop: 0 }}
+                                        animate={{
+                                            height: "auto",
+                                            marginTop: 24,
+                                        }}
+                                        exit={{ height: 0, marginTop: 0 }}
+                                        className={twMerge("overflow-hidden")}
+                                    >
+                                        <p className="text-black/50">
+                                            {faq.answer}
+                                        </p>
+                                    </motion.div>
                                 )}
-                            >
-                                <p className="text-black/50">{faq.answer}</p>
-                            </div>
+                            </AnimatePresence>
                         </div>
                     ))}
                 </div>
