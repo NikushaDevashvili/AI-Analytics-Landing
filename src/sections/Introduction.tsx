@@ -138,6 +138,13 @@ export default function Introduction() {
                     <div className="flex justify-center">
                         <Tag>Causal Reasoning</Tag>
                     </div>
+                    <p className="text-sm text-center text-black/50 mt-4 font-light">
+                        Scroll to read ↓
+                    </p>
+                    <motion.div
+                        style={{ scaleX: scrollYProgress }}
+                        className="mx-auto flex justify-center mt-6 h-1 w-64 bg-gray-300 origin-left rounded-full"
+                    />
 
                     {/* Paragraph 1 */}
                     <ScrollAnimatedWords
@@ -156,7 +163,7 @@ export default function Introduction() {
                 </div>
 
                 {/* Scroll Trigger Zone */}
-                <div className="h-[200vh]" ref={scrollRef}></div>
+                <div className="h-[150vh]" ref={scrollRef}></div>
             </div>
         </section>
     );

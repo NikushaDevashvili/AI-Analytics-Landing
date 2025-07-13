@@ -2,7 +2,7 @@ import bgImage from "@/assets/images/bgIm.png";
 
 export default function Hero() {
     return (
-        <section className="relative py-44 overflow-x-clip z-40">
+        <section className="relative md:py-44 sm:py-36 overflow-x-clip z-40">
             {/* ✅ Background Layer */}
             <div
                 className="absolute inset-0 z-0 bg-cover bg-center opacity-30 blur-md"
