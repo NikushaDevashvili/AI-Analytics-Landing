@@ -10,8 +10,8 @@ export default function Home() {
             <Navbar />
             <Hero />
             {/* <LogoTicker /> */}
-            <Introduction />
             <Features />
+            <Introduction />
             <Faqs />
         </>
     );

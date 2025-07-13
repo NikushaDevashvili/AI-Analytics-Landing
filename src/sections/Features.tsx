@@ -24,18 +24,19 @@ export default function Features() {
                     <Tag>Features</Tag>
                 </div>
 
-                {/* Section 1 */}
+                {/* Section 2 moved to the top */}
                 <motion.div
+                    ref={imageRef1}
                     initial={{ opacity: 0, y: 40 }}
                     animate={
                         isInView1 ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }
                     }
-                    transition={{ duration: 0.6, ease: "easeOut" }}
-                    className="text-center mt-6"
+                    transition={{ duration: 0.5, ease: "easeOut" }}
+                    className="text-center mt-16"
                 >
                     <h2 className="md:text-5xl sm:text-3xl lg:text-5xl font-roman font-iowan">
-                        Get Instant{" "}
-                        <span className="text-amber-950">Answers</span>
+                        Monitor your analytics{" "}
+                        <span className="text-amber-950">24/7</span>
                     </h2>
                     <p className="mt-4 sm:max-w-md md:max-w-2xl lg:max-w-2xl m-auto text-black/50">
                         Ask any question, get answer that combines Google
@@ -43,13 +44,58 @@ export default function Features() {
                         into one actionable insight
                     </p>
                 </motion.div>
-
                 <div className="mt-12 ">
                     <motion.div
                         ref={imageRef1}
                         initial={{ opacity: 0, y: 40 }}
                         animate={
                             isInView1
+                                ? { opacity: 1, y: 0 }
+                                : { opacity: 0, y: 40 }
+                        }
+                        transition={{ duration: 0.5, ease: "easeOut" }}
+                    >
+                        <Image
+                            src={feature2img}
+                            alt="Feature 2"
+                            width={1280}
+                            height={1020}
+                            className="rounded-3xl w-full object-cover md:aspect-[3/2] sm:aspect-[16/14]"
+                        />
+                    </motion.div>
+                </div>
+
+                {/* Section 3 moved to second position */}
+                <div className="mt-12 ">
+                    <motion.div
+                        ref={imageRef2}
+                        initial={{ opacity: 0, y: 40 }}
+                        animate={
+                            isInView2
+                                ? { opacity: 1, y: 0 }
+                                : { opacity: 0, y: 40 }
+                        }
+                        transition={{ duration: 0.6, ease: "easeOut" }}
+                        className="text-center mt-56"
+                    >
+                        <h2 className="md:text-5xl sm:text-3xl lg:text-5xl font-roman font-iowan">
+                            Get Instant{" "}
+                            <span className="text-amber-950">Answers</span>
+                        </h2>
+                        <p className="mt-4 sm:max-w-md md:max-w-2xl lg:max-w-2xl m-auto text-black/50">
+                            Ask any question, get answer that combines Google
+                            Analytics, MS Clarity, Hotjar and other analytical
+                            data into one actionable insight
+                        </p>
+                    </motion.div>
+                </div>
+
+                <div className="mt-12 ">
+                    <motion.div
+                        ref={imageRef2}
+                        initial={{ opacity: 0, y: 40 }}
+                        animate={
+                            isInView2
                                 ? { opacity: 1, y: 0 }
                                 : { opacity: 0, y: 40 }
                         }
@@ -65,7 +111,7 @@ export default function Features() {
                     </motion.div>
                 </div>
 
-                {/* Section 3 */}
+                {/* Section 1 moved to last position */}
                 <motion.div
                     ref={imageRef3}
                     initial={{ opacity: 0, y: 40 }}
@@ -99,47 +145,6 @@ export default function Features() {
                         <Image
                             src={feature3img}
                             alt="Feature 3"
-                            width={1280}
-                            height={1020}
-                            className="rounded-3xl w-full object-cover md:aspect-[3/2] sm:aspect-[16/14]"
-                        />
-                    </motion.div>
-                </div>
-
-                {/* Section 2 */}
-                <motion.div
-                    ref={imageRef2}
-                    initial={{ opacity: 0, y: 40 }}
-                    animate={
-                        isInView2 ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }
-                    }
-                    transition={{ duration: 0.5, ease: "easeOut" }}
-                    className="text-center mt-56"
-                >
-                    <h2 className="md:text-5xl sm:text-3xl lg:text-5xl font-roman font-iowan">
-                        Monitor your analytics{" "}
-                        <span className="text-amber-950">24/7</span>
-                    </h2>
-                    <p className="mt-4 sm:max-w-md md:max-w-2xl lg:max-w-2xl m-auto text-black/50">
-                        Ask any question, get answer that combines Google
-                        Analytics, MS Clarity, Hotjar and other analytical data
-                        into one actionable insight
-                    </p>
-                </motion.div>
-                <div className="mt-12 ">
-                    <motion.div
-                        ref={imageRef2}
-                        initial={{ opacity: 0, y: 40 }}
-                        animate={
-                            isInView2
-                                ? { opacity: 1, y: 0 }
-                                : { opacity: 0, y: 40 }
-                        }
-                        transition={{ duration: 0.5, ease: "easeOut" }}
-                    >
-                        <Image
-                            src={feature2img}
-                            alt="Feature 2"
                             width={1280}
                             height={1020}
                             className="rounded-3xl w-full object-cover md:aspect-[3/2] sm:aspect-[16/14]"
