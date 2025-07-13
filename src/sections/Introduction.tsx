@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useMemo } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Tag from "@/components/Tag";
 import ga4Img from "@/assets/images/GA4img.png";
@@ -72,18 +72,27 @@ function ScrollAnimatedWords({
     offsetStart?: number;
     className?: string;
 }) {
-    const opacities: ReturnType<typeof useTransform>[] = [];
-    const translationsY: ReturnType<typeof useTransform>[] = [];
+    const opacities = useMemo(
+        () =>
+            content.map((_, index) => {
+                const i = index + offsetStart;
+                const start = i * 0.01;
+                const end = start + 0.25;
+                return useTransform(scrollYProgress, [start, end], [0, 1]);
+            }),
+        [scrollYProgress, content, offsetStart]
+    );
 
-    content.forEach((_, index) => {
-        const i = index + offsetStart;
-        const start = i * 0.01;
-        const end = start + 0.25;
-        opacities.push(useTransform(scrollYProgress, [start, end], [0, 1]));
-        translationsY.push(
-            useTransform(scrollYProgress, [start, end], [20, 0])
-        );
-    });
+    const translationsY = useMemo(
+        () =>
+            content.map((_, index) => {
+                const i = index + offsetStart;
+                const start = i * 0.01;
+                const end = start + 0.25;
+                return useTransform(scrollYProgress, [start, end], [20, 0]);
+            }),
+        [scrollYProgress, content, offsetStart]
+    );
 
     return (
         <div className={`flex flex-wrap justify-center ${className}`}>
