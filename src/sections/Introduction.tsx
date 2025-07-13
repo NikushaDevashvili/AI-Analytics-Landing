@@ -3,7 +3,7 @@
 "use client";
 
 import { useRef, useMemo } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, MotionValue } from "framer-motion";
 import Tag from "@/components/Tag";
 import ga4Img from "@/assets/images/GA4img.png";
 import clarityImg from "@/assets/images/Clarityimg.png";
@@ -11,7 +11,7 @@ import hotjarImg from "@/assets/images/Hotjarimg.png";
 import intercomImg from "@/assets/images/Intercomimg.png";
 
 // --- Content ---
-const paragraph1 = [
+const paragraph1: (string | { type: "img"; src: string; alt: string })[] = [
     "We",
     "found",
     "a",
@@ -47,7 +47,7 @@ const paragraph1 = [
     "happens.",
 ];
 
-const paragraph2 = [
+const paragraph2: (string | { type: "img"; src: string; alt: string })[] = [
     "We",
     "found",
     "the",
@@ -62,6 +62,32 @@ const paragraph2 = [
     "lost.",
 ];
 
+// --- Custom hook to generate transforms safely ---
+function useAnimatedTransforms(
+    scrollYProgress: MotionValue<number>,
+    length: number,
+    offsetStart = 0
+) {
+    return useMemo(() => {
+        const opacityArray: MotionValue<number>[] = [];
+        const translateYArray: MotionValue<number>[] = [];
+
+        for (let index = 0; index < length; index++) {
+            const i = index + offsetStart;
+            const start = i * 0.01;
+            const end = start + 0.25;
+            opacityArray.push(
+                useTransform(scrollYProgress, [start, end], [0, 1])
+            );
+            translateYArray.push(
+                useTransform(scrollYProgress, [start, end], [20, 0])
+            );
+        }
+
+        return { opacityArray, translateYArray };
+    }, [scrollYProgress, length, offsetStart]);
+}
+
 // --- Reusable Word-by-Word Scroll Animation Component ---
 function ScrollAnimatedWords({
     content,
@@ -70,37 +96,21 @@ function ScrollAnimatedWords({
     className = "",
 }: {
     content: (string | { type: "img"; src: string; alt: string })[];
-    scrollYProgress: ReturnType<typeof useScroll>["scrollYProgress"];
+    scrollYProgress: MotionValue<number>;
     offsetStart?: number;
     className?: string;
 }) {
-    const opacities = useMemo(
-        () =>
-            content.map((_, index) => {
-                const i = index + offsetStart;
-                const start = i * 0.01;
-                const end = start + 0.25;
-                return useTransform(scrollYProgress, [start, end], [0, 1]);
-            }),
-        [scrollYProgress, content, offsetStart]
-    );
-
-    const translationsY = useMemo(
-        () =>
-            content.map((_, index) => {
-                const i = index + offsetStart;
-                const start = i * 0.01;
-                const end = start + 0.25;
-                return useTransform(scrollYProgress, [start, end], [20, 0]);
-            }),
-        [scrollYProgress, content, offsetStart]
+    const { opacityArray, translateYArray } = useAnimatedTransforms(
+        scrollYProgress,
+        content.length,
+        offsetStart
     );
 
     return (
         <div className={`flex flex-wrap justify-center ${className}`}>
             {content.map((item, index) => {
-                const opacity = opacities[index];
-                const y = translationsY[index];
+                const opacity = opacityArray[index];
+                const y = translateYArray[index];
 
                 if (typeof item === "string") {
                     return (
