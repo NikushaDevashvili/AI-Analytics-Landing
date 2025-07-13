@@ -72,21 +72,18 @@ function ScrollAnimatedWords({
     offsetStart?: number;
     className?: string;
 }) {
-    const startOffsets = content.map((_, index) => {
+    const opacities: ReturnType<typeof useTransform>[] = [];
+    const translationsY: ReturnType<typeof useTransform>[] = [];
+
+    content.forEach((_, index) => {
         const i = index + offsetStart;
-        return {
-            start: i * 0.01,
-            end: i * 0.01 + 0.25,
-        };
+        const start = i * 0.01;
+        const end = start + 0.25;
+        opacities.push(useTransform(scrollYProgress, [start, end], [0, 1]));
+        translationsY.push(
+            useTransform(scrollYProgress, [start, end], [20, 0])
+        );
     });
-
-    const opacities = startOffsets.map(({ start, end }) =>
-        useTransform(scrollYProgress, [start, end], [0, 1])
-    );
-
-    const translationsY = startOffsets.map(({ start, end }) =>
-        useTransform(scrollYProgress, [start, end], [20, 0])
-    );
 
     return (
         <div className={`flex flex-wrap justify-center ${className}`}>
@@ -148,7 +145,7 @@ export default function Introduction() {
                         content={paragraph2}
                         scrollYProgress={scrollYProgress}
                         offsetStart={paragraph1.length}
-                        className="text-2xl text-center font-roman font-light mt-24 text-black/40  gap-x-2"
+                        className="text-2xl text-center font-roman font-light mt-24 text-black/40 gap-x-2"
                     />
                 </div>
 

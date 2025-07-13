@@ -7,16 +7,6 @@ import feature11img from "@/assets/images/Feature111.png";
 import feature2img from "@/assets/images/Feature2.jpg";
 import feature3img from "@/assets/images/Feature3.png";
 
-const features = [
-    "Asset Library",
-    "Code Preview",
-    "Flow Mode",
-    "Smart Sync",
-    "Auto Layout",
-    "Fast Search",
-    "Smart Guides",
-];
-
 export default function Features() {
     const imageRef1 = useRef<HTMLDivElement>(null);
     const isInView1 = useInView(imageRef1, { amount: 0.2 });
