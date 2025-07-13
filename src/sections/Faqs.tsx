@@ -30,10 +30,10 @@ export default function Faqs() {
         <section className="py-24">
             <div className="container">
                 <div className="flex justify-center">
-                    <Tag>FAQ's</Tag>
+                    <Tag>FAQs</Tag>
                 </div>
                 <h2 className="text-5xl font-iowan font-medium mt-6 text-center max-w-xl mx-auto">
-                    Questions? We've got <span>answers</span>
+                    Questions? We have <span>answers</span>
                 </h2>
                 <div className="mt-12 flex flex-col gap-6 items-center">
                     {faqs.map((faq, faqIndex) => (

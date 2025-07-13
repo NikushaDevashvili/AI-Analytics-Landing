@@ -72,24 +72,32 @@ function ScrollAnimatedWords({
     offsetStart?: number;
     className?: string;
 }) {
+    const startOffsets = content.map((_, index) => {
+        const i = index + offsetStart;
+        return {
+            start: i * 0.01,
+            end: i * 0.01 + 0.25,
+        };
+    });
+
+    const opacities = startOffsets.map(({ start, end }) =>
+        useTransform(scrollYProgress, [start, end], [0, 1])
+    );
+
+    const translationsY = startOffsets.map(({ start, end }) =>
+        useTransform(scrollYProgress, [start, end], [20, 0])
+    );
+
     return (
         <div className={`flex flex-wrap justify-center ${className}`}>
             {content.map((item, index) => {
-                const i = index + offsetStart;
-                const start = i * 0.01;
-                const end = start + 0.25;
-
-                const opacity = useTransform(
-                    scrollYProgress,
-                    [start, end],
-                    [0, 1]
-                );
-                const y = useTransform(scrollYProgress, [start, end], [20, 0]);
+                const opacity = opacities[index];
+                const y = translationsY[index];
 
                 if (typeof item === "string") {
                     return (
                         <motion.span
-                            key={`text-${i}`}
+                            key={`text-${index + offsetStart}`}
                             style={{ opacity, y }}
                             className="inline-block"
                         >
@@ -100,7 +108,7 @@ function ScrollAnimatedWords({
 
                 return (
                     <motion.img
-                        key={`img-${i}`}
+                        key={`img-${index + offsetStart}`}
                         src={item.src}
                         alt={item.alt}
                         style={{ opacity, y }}
