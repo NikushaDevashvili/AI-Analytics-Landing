@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { ModalProvider } from "@/components/ModalContext";
+import GlobalModal from "@/components/GlobalModal";
 
 const inter = Inter({
     variable: "--font-inter",
@@ -24,7 +26,10 @@ export default function RootLayout({
             <body
                 className={`${inter.variable} font-sans antialiased bg-white  text-black`}
             >
-                {children}
+                <ModalProvider>
+                    {children}
+                    <GlobalModal />
+                </ModalProvider>
             </body>
         </html>
     );
