@@ -1,11 +1,12 @@
 import bgImage from "@/assets/images/bgIm.png";
+import { PointerHighlight } from "@/components/ui/pointer-highlight";
 
 export default function Hero() {
     return (
         <section className="relative md:py-44 sm:py-36 overflow-x-clip z-40">
             {/* ✅ Background Layer */}
             <div
-                className="absolute inset-0 z-0 bg-cover bg-center opacity-30 blur-md"
+                className="absolute inset-0 z-0 bg-cover bg-center opacity-20 blur-md"
                 style={{ backgroundImage: `url(${bgImage.src})` }}
             />
 
@@ -20,7 +21,14 @@ export default function Hero() {
                     className="text-5xl md:text-6xl lg:text-6xl lg:font-roman text-center mt-2 font-iowan break-normal w-full tracking-tight
 "
                 >
-                    Your Product is Talking, <br /> We Help You Hear It.
+                    Your Product is Talking, <br />
+                    <PointerHighlight
+                        rectangleClassName=" border-neutral-100 leading-loose"
+                        pointerClassName="text-black h-3 w-3"
+                        containerClassName="inline-block mr-"
+                    >
+                        <span>We Help You Hear It.</span>
+                    </PointerHighlight>
                 </h1>
                 <p className="text-center text-xl text-black/50 mt-8 max-w-2xl mx-auto">
                     Dashboards Out. Answers In. All Your Analytics in One Place.

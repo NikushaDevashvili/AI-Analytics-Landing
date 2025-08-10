@@ -6,6 +6,7 @@ const config: Config = {
         "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
         "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
         "./src/sections/**/*.{js,ts,jsx,tsx,mdx}",
+        "./src/lib/**/*.{js,ts,jsx,tsx,mdx}",
     ],
     theme: {
         container: {
@@ -24,6 +25,12 @@ const config: Config = {
             sm: "375px",
             md: "768px",
             lg: "1200px",
+        },
+        extend: {
+            boxShadow: {
+                "outline-gray":
+                    "inset 0 0 0 1px rgba(255,255,255,0.1), 0 0 0 1px rgba(0,0,0,0.1)",
+            },
         },
     },
     plugins: [],

@@ -6,6 +6,7 @@ import { useInView, motion } from "framer-motion";
 import feature11img from "@/assets/images/Feature111.png";
 import feature2img from "@/assets/images/Feature2.jpg";
 import feature3img from "@/assets/images/Feature3.png";
+import { FollowerPointerCard } from "@/components/ui/following-poineter";
 
 export default function Features() {
     const imageRef1 = useRef<HTMLDivElement>(null);
@@ -20,10 +21,6 @@ export default function Features() {
     return (
         <section className="py-24">
             <div className="sm:mx-3 md:mx-48 lg:mx-72 xl:mx-64">
-                <div className="flex justify-center">
-                    <Tag>Features</Tag>
-                </div>
-
                 {/* Section 2 moved to the top */}
                 <motion.div
                     ref={imageRef1}
@@ -44,26 +41,28 @@ export default function Features() {
                         into one actionable insight
                     </p>
                 </motion.div>
-                <div className="mt-12 ">
-                    <motion.div
-                        ref={imageRef1}
-                        initial={{ opacity: 0, y: 40 }}
-                        animate={
-                            isInView1
-                                ? { opacity: 1, y: 0 }
-                                : { opacity: 0, y: 40 }
-                        }
-                        transition={{ duration: 0.5, ease: "easeOut" }}
-                    >
-                        <Image
-                            src={feature2img}
-                            alt="Feature 2"
-                            width={1280}
-                            height={1020}
-                            className="rounded-3xl w-full object-cover md:aspect-[3/2] sm:aspect-[16/14]"
-                        />
-                    </motion.div>
-                </div>
+                <FollowerPointerCard>
+                    <div className="mt-12 ">
+                        <motion.div
+                            ref={imageRef1}
+                            initial={{ opacity: 0, y: 40 }}
+                            animate={
+                                isInView1
+                                    ? { opacity: 1, y: 0 }
+                                    : { opacity: 0, y: 40 }
+                            }
+                            transition={{ duration: 0.5, ease: "easeOut" }}
+                        >
+                            <Image
+                                src={feature2img}
+                                alt="Feature 2"
+                                width={1280}
+                                height={1020}
+                                className="rounded-3xl w-full object-cover md:aspect-[3/2] sm:aspect-[16/14]"
+                            />
+                        </motion.div>
+                    </div>
+                </FollowerPointerCard>
 
                 {/* Section 3 moved to second position */}
                 <div className="mt-12 ">
