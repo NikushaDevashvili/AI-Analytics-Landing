@@ -23,6 +23,13 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
+            <head>
+                <script
+                    defer
+                    src="http://localhost:3000/script.js"
+                    data-website-id="64ddb8d9-881b-43f5-b4d1-6410e96bfb84"
+                ></script>
+            </head>
             <body
                 className={`${inter.variable} font-sans antialiased bg-white  text-black`}
             >

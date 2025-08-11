@@ -15,7 +15,7 @@ export default function Navbar() {
     const { open } = useModal();
 
     return (
-        <section className="py-4 lg:py-8 bg-transparent fixed top-0 w-full z-50">
+        <section className="py-4 lg:py-8 bg-transparent fixed top-0 w-full z-50  border-solid border-x-2 border-y-2  border-spacing-x-3">
             <div className="container max-w-4xl">
                 <div className="flex items-center justify-between rounded-full p-2 px-4 md:pr-2 h-[56px] bg-black/5 backdrop-blur-[36px]">
                     <div>
