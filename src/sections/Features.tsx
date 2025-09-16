@@ -20,7 +20,7 @@ export default function Features() {
 
     return (
         <section>
-            <div className="container  border-gray-200 border-x border-y  border-solid">
+            <div className="container-custom  border-gray-200 border-x border-y  border-solid">
                 {/* Section 2 moved to the top */}
                 <motion.div
                     ref={imageRef1}

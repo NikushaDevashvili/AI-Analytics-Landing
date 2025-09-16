@@ -4,8 +4,8 @@ export default function Functional() {
     return (
         <>
             <section>
-                <div className="border-gray-200 border-x border-y border-solid ">
-                    <div className="container border-gray-200 border-x border-l-0 border-r-0  border-solid p-0">
+                <div className="container-custom border-gray-200 border-x border-y border-solid ">
+                    <div className=" border-gray-200 border-x border-l-0 border-r-0  border-solid p-0">
                         <div className="border-x min-h-[5rem]"></div>
                         <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
                             <div className="flex flex-col px-4 py-4 bg-gray-100 border border-gray-200">

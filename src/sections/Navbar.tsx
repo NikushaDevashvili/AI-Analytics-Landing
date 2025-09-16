@@ -50,7 +50,7 @@ export default function Navbar() {
                         </Button> */}
                         <Button
                             variant="primary"
-                            className="hidden md:inline-flex items-center"
+                            className="hidden rounded-none md:inline-flex items-center"
                             onClick={open}
                         >
                             Join Waitlist

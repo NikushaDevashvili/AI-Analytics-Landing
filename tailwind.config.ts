@@ -15,7 +15,8 @@ const config: Config = {
             padding: {
                 DEFAULT: "1rem",
                 md: "2rem",
-                lg: "4rem",
+                lg: "2rem",
+                xl: "3rem",
             },
         },
         fontFamily: {

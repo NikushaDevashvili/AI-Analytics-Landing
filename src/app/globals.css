@@ -78,5 +78,9 @@
         .tracking-custom {
             letter-spacing: -0.05em;
         }
+        .container-custom {
+            @apply mx-auto px-4 md:px-8 lg:px-16;
+            max-width: 1600px; /* Set your desired max width */
+        }
     }
 }

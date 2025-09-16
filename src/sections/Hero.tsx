@@ -4,15 +4,41 @@ import { PointerHighlight } from "@/components/ui/pointer-highlight";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 
+import heroImage from "@/assets/images/HeroDashboardLight.png";
+import PixelBlast from "@/components/PixelBlast";
+
 export default function Hero() {
     return (
-        <section className="relative md:pt-20 sm:pt-20 overflow-x-clip z-40">
+        <section className="relative md:pt-14 sm:pt-8 overflow-x-clip z-40">
             {/* ✅ Background Layer */}
-            <div
+
+            {/* <div
                 className="absolute inset-0 z-0 bg-cover bg-center opacity-10 blur-md"
                 style={{ backgroundImage: `url(${bgImage.src})` }}
-            />
-            <div className="container border-gray-200 border-x border-y  border-solid b">
+            /> */}
+            {/* <div className="absolute inset-0 z-0 bg-cover bg-center">
+                <PixelBlast
+                    variant="square"
+                    pixelSize={1}
+                    color="bg-gray-100"
+                    patternScale={3}
+                    patternDensity={1.2}
+                    pixelSizeJitter={0.5}
+                    enableRipples
+                    rippleSpeed={0.4}
+                    rippleThickness={0.12}
+                    rippleIntensityScale={1.5}
+                    liquid
+                    liquidStrength={0.12}
+                    liquidRadius={1.2}
+                    liquidWobbleSpeed={5}
+                    speed={0.6}
+                    edgeFade={0.25}
+                    transparent
+                />
+            </div> */}
+
+            <div className="container-custom  border-gray-200 border-x border-y  border-solid b">
                 {/*  Content Layer */}
                 <div className=" relative z-10">
                     {/* <div className="flex justify-center">
@@ -36,8 +62,9 @@ export default function Hero() {
                             {/* </PointerHighlight> */}
                         </h1>
                         <p className="text-left text-xl text-black/50 mt-8 mx-auto">
-                            Dashboards Out. Answers In. All Your Analytics in
-                            One Place.
+                            Monitor hallucinations, cost overruns, and
+                            performance drifts <br></br>in real time — with a
+                            single, standardized dashboard.
                         </p>
                         {/* <form className="flex border border-white/15 rounded-full p-2 mt-8 max-w-lg mx-auto">
                     <input
@@ -79,6 +106,14 @@ export default function Hero() {
                                 Request a Demo
                                 <ArrowRight />
                             </Button>
+                        </div>
+
+                        <div className="mt-12 bg-slate-200 border-solid border-2">
+                            <img
+                                src={heroImage.src}
+                                alt="Functional Image"
+                                className="z-10 w-full h-2/4 md:h-2/4 sm:h-full object-cover p-8"
+                            />
                         </div>
                     </div>
                 </div>
