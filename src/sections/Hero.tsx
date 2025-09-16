@@ -1,6 +1,9 @@
 import bgImage from "@/assets/images/bgIm.png";
 import { PointerHighlight } from "@/components/ui/pointer-highlight";
 
+import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
+
 export default function Hero() {
     return (
         <section className="relative md:pt-20 sm:pt-20 overflow-x-clip z-40">
@@ -11,7 +14,7 @@ export default function Hero() {
             />
             <div className="container border-gray-200 border-x border-y  border-solid b">
                 {/*  Content Layer */}
-                <div className="container relative z-10">
+                <div className=" relative z-10">
                     {/* <div className="flex justify-center">
                     <div className="inline-flex py-1 px-3 bg-gradient-to-r from-purple-400 to-pink-400 text-neutral-950 rounded-full font-semibold">
                         ✨7.5M seed round raised
@@ -19,17 +22,17 @@ export default function Hero() {
                 </div> */}
                     <div className="py-16">
                         <h1
-                            className="text-5xl md:text-6xl lg:text-6xl lg:font-roman text-left mt-20 font-iowan break-normal w-full tracking-tight
+                            className="text-5xl md:text-6xl lg:text-5xl lg:font-roman text-left mt-20 font-medium break-normal w-full tracking-tighter
 "
                         >
-                            Your Product is Talking, <br />
-                            <PointerHighlight
+                            Ensure your AI performs flawlessly <br />
+                            {/* <PointerHighlight
                                 rectangleClassName=" border-neutral-100 leading-loose"
                                 pointerClassName="text-black h-3 w-3"
                                 containerClassName="inline-block mr-"
-                            >
-                                <span>We Help You Hear It.</span>
-                            </PointerHighlight>
+                            > */}
+                            <span>for every user, every time.</span>
+                            {/* </PointerHighlight> */}
                         </h1>
                         <p className="text-left text-xl text-black/50 mt-8 mx-auto">
                             Dashboards Out. Answers In. All Your Analytics in
@@ -51,7 +54,7 @@ export default function Hero() {
                     </Button>
                 </form> */}
 
-                        <div className="mt-20 mx-4 mb-60 flex justify-center z-50 relative before:absolute before:inset-0 before:rounded-xl before:bg-gradient-to-br before:from-white/10 before:to-purple-500/10 before:blur-2xl before:z-0">
+                        {/* <div className="mt-20 mx-4 mb-60 flex justify-center z-50 relative before:absolute before:inset-0 before:rounded-xl before:bg-gradient-to-br before:from-white/10 before:to-purple-500/10 before:blur-2xl before:z-0">
                             <video
                                 src="/videos/Chat-Animation3.mp4"
                                 className="w-full sm:max-w-xl md:max-w-2xl h-auto rounded-2xl shadow-xl z-10"
@@ -60,6 +63,21 @@ export default function Hero() {
                                 loop
                                 playsInline
                             />
+                        </div> */}
+                        <div className="flex flex-row gap-3 py-6 ">
+                            <Button
+                                variant="default"
+                                className="text-md rounded-none px-4 py-6"
+                            >
+                                Join Waitlist
+                            </Button>
+                            <Button
+                                variant="ghost"
+                                className="text-md rounded-none  text-black outline-dashed -outline-offset-1 outline-gray-300 px-4 py-6"
+                            >
+                                Request a Demo
+                                <ArrowRight />
+                            </Button>
                         </div>
                     </div>
                 </div>

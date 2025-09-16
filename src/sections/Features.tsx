@@ -31,7 +31,7 @@ export default function Features() {
                     transition={{ duration: 0.5, ease: "easeOut" }}
                     className="text-center mt-16"
                 >
-                    <h2 className="md:text-5xl sm:text-3xl lg:text-5xl font-roman font-iowan">
+                    <h2 className="md:text-5xl sm:text-3xl lg:text-5xl ">
                         Monitor your analytics{" "}
                         <span className="text-amber-950">24/7</span>
                     </h2>

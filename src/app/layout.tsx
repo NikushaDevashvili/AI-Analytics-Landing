@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { ModalProvider } from "@/components/ModalContext";
 import GlobalModal from "@/components/GlobalModal";
+import { ThemeProvider } from "@/components/theme-provider";
 
 const inter = Inter({
     variable: "--font-inter",
@@ -11,18 +12,13 @@ const inter = Inter({
     axes: ["opsz"],
 });
 
-export const metadata: Metadata = {
-    title: "Modern Design Tool Landing Page",
-    description: "Created with the help of Frontend Tribe",
-};
-
 export default function RootLayout({
     children,
 }: Readonly<{
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="en">
+        <html lang="en" suppressHydrationWarning>
             <head>
                 <script
                     defer
@@ -33,10 +29,17 @@ export default function RootLayout({
             <body
                 className={`${inter.variable} font-sans antialiased bg-white  text-black`}
             >
-                <ModalProvider>
-                    {children}
-                    <GlobalModal />
-                </ModalProvider>
+                <ThemeProvider
+                    attribute="class"
+                    defaultTheme="system"
+                    enableSystem
+                    disableTransitionOnChange
+                >
+                    <ModalProvider>
+                        {children}
+                        <GlobalModal />
+                    </ModalProvider>
+                </ThemeProvider>
             </body>
         </html>
     );
