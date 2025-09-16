@@ -19,8 +19,8 @@ const config: Config = {
             },
         },
         fontFamily: {
-            sans: ["CommitMono", "var(--font-inter)", "sans-serif"],
-            mono: ["CommitMono", "monospace"],
+            sans: ["JetBrains Mono", "sans-serif"],
+            mono: ["JetBrains Mono", "monospace"],
             iowan: ["var(--font-iowan)", "Georgia", "serif"],
         },
         screens: {

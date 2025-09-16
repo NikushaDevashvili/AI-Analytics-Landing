@@ -22,10 +22,11 @@ export default function Hero() {
                 </div> */}
                     <div className="py-16">
                         <h1
-                            className="text-5xl md:text-6xl lg:text-5xl lg:font-roman text-left mt-20 font-medium break-normal w-full tracking-tighter
+                            className="text-5xl md:text-6xl lg:text-5xl lg:font-roman text-left mt-20 font-medium break-normal w-full tracking-custom 
 "
                         >
-                            Ensure your AI performs flawlessly <br />
+                            Ensure your AI performs flawlessly
+                            <br />
                             {/* <PointerHighlight
                                 rectangleClassName=" border-neutral-100 leading-loose"
                                 pointerClassName="text-black h-3 w-3"

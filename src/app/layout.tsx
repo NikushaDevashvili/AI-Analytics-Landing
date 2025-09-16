@@ -1,15 +1,14 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { ModalProvider } from "@/components/ModalContext";
 import GlobalModal from "@/components/GlobalModal";
 import { ThemeProvider } from "@/components/theme-provider";
 
-const inter = Inter({
-    variable: "--font-inter",
+const jetbrainsMono = JetBrains_Mono({
+    variable: "--font-jetbrains-mono",
     subsets: ["latin"],
     display: "swap",
-    axes: ["opsz"],
 });
 
 export default function RootLayout({
@@ -27,7 +26,7 @@ export default function RootLayout({
                 ></script>
             </head>
             <body
-                className={`${inter.variable} font-sans antialiased bg-white  text-black`}
+                className={`${jetbrainsMono.variable} font-sans antialiased bg-white  text-black`}
             >
                 <ThemeProvider
                     attribute="class"

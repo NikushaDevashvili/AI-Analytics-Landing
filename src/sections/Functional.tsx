@@ -9,7 +9,9 @@ export default function Functional() {
                         <div className="border-x min-h-[5rem]"></div>
                         <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
                             <div className="flex flex-col px-4 py-4 bg-gray-100 border border-gray-200">
-                                <div className="text-2xl ">Install</div>
+                                <div className="text-2xl ">
+                                    Detect issues before your users do
+                                </div>
                                 <div className="mt-4 pb-4">
                                     <p className="text-sm">
                                         Import raw data from existing
@@ -27,7 +29,10 @@ export default function Functional() {
                                 </div>
                             </div>
                             <div className="flex flex-col px-4 py-4 bg-gray-100 border border-gray-200">
-                                <div className="text-2xl flex-1">Install</div>
+                                <div className="text-2xl flex-1">
+                                    Trace conversations & tool calls to the root
+                                    cause
+                                </div>
                                 <div className="mt-4 pb-4">
                                     <p className="text-sm">
                                         Import raw data from existing
@@ -45,7 +50,9 @@ export default function Functional() {
                                 </div>
                             </div>
                             <div className="flex flex-col px-4 py-4 bg-gray-100 border border-gray-200">
-                                <div className="text-2xl flex-1">Install</div>
+                                <div className="text-2xl flex-1">
+                                    Get real-time Slack alerts when things break
+                                </div>
                                 <div className="mt-4 pb-4">
                                     <p className="text-sm">
                                         Import raw data from existing

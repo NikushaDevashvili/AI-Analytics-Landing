@@ -4,9 +4,10 @@
 
 :root {
     --font-iowan: "Iowan Old Style", "Georgia", serif;
-    --font-commit-mono: "CommitMono", monospace;
+    --font-jetbrains-mono: "JetBrains Mono", monospace;
 }
 
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap");
 @layer base {
     :root {
         --background: 0 0% 100%;
@@ -69,6 +70,13 @@
     }
     body {
         @apply bg-background text-foreground;
-        font-family: var(--font-commit-mono);
+        font-family: var(--font-jetbrains-mono);
+        line-height: 1.4; /* Adjust this value: 1.4 = tighter, 1.8 = looser */
+        letter-spacing: -0.09em; /* Adjust this value: negative = tighter, positive = looser */
+    }
+    @layer utilities {
+        .tracking-custom {
+            letter-spacing: -0.05em;
+        }
     }
 }
