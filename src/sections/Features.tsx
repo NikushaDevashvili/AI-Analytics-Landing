@@ -19,8 +19,8 @@ export default function Features() {
     const isInView3 = useInView(imageRef3, { amount: 0.2 });
 
     return (
-        <section className="py-24">
-            <div className="sm:mx-3 md:mx-48 lg:mx-72 xl:mx-64">
+        <section>
+            <div className="container  border-gray-200 border-x border-y  border-solid">
                 {/* Section 2 moved to the top */}
                 <motion.div
                     ref={imageRef1}
