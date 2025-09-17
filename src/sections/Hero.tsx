@@ -46,19 +46,19 @@ export default function Hero() {
                         ✨7.5M seed round raised
                     </div>
                 </div> */}
-                    <div className="py-16">
+                    <div className="py-16 px-32">
                         <h1
                             className="text-5xl md:text-6xl lg:text-5xl lg:font-roman text-left mt-20 font-medium break-normal w-full tracking-custom 
 "
                         >
-                            Ensure your AI performs flawlessly
+                            AI failures happen.
                             <br />
                             {/* <PointerHighlight
                                 rectangleClassName=" border-neutral-100 leading-loose"
                                 pointerClassName="text-black h-3 w-3"
                                 containerClassName="inline-block mr-"
                             > */}
-                            <span>for every user, every time.</span>
+                            <span>Catch them first.</span>
                             {/* </PointerHighlight> */}
                         </h1>
                         <p className="text-left text-xl text-black/50 mt-8 mx-auto">

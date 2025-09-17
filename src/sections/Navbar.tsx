@@ -26,7 +26,7 @@ export default function Navbar() {
                         />
                     </div>
                     <div className="lg:flex flex-justify-center items-center hidden">
-                        <nav className="flex gap-6 font-regular text-base opacity-70">
+                        <nav className="flex gap-8 font-regular text-base opacity-70">
                             {navLinks.map((link) => (
                                 <a href={link.href} key={link.label}>
                                     {link.label}
