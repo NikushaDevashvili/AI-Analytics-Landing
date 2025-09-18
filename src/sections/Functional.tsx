@@ -40,7 +40,7 @@ export default function Functional() {
                                     Monitor AI performance
                                 </div>
                                 <div className="mt-4 pb-4">
-                                    <p className="text-sm">
+                                    <p className="text-md">
                                         Get real-time visibility into errors,
                                         drifts, and hidden failures so you
                                         always know how your AI is behaving.
@@ -59,7 +59,7 @@ export default function Functional() {
                                     Track costs & budgets
                                 </div>
                                 <div className="mt-4 pb-4">
-                                    <p className="text-sm">
+                                    <p className="text-md">
                                         Stay ahead of runaway usage. See exactly
                                         where your AI overspends and keep costs
                                         under control.
@@ -69,7 +69,7 @@ export default function Functional() {
                                     <img
                                         src={hotjarimg.src}
                                         alt="Functional Image"
-                                        className="w-full h-48 md:h-64 object-cover"
+                                        className="w-full h-48 md:h-72 object-cover"
                                     />
                                 </div>
                             </div>
@@ -78,7 +78,7 @@ export default function Functional() {
                                     Get instant alerts
                                 </div>
                                 <div className="mt-4 pb-4">
-                                    <p className="text-sm">
+                                    <p className="text-md">
                                         Receive Slack notifications the moment
                                         something breaks, so your team can act
                                         before users notice.
