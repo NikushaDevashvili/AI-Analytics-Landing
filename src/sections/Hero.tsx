@@ -46,7 +46,7 @@ export default function Hero() {
                         ✨7.5M seed round raised
                     </div>
                 </div> */}
-                    <div className="py-16 px-32">
+                    <div className="py-16 lg:px-32">
                         <h1
                             className="text-5xl md:text-6xl lg:text-5xl lg:font-roman text-left mt-20 font-medium break-normal w-full tracking-custom 
 "
