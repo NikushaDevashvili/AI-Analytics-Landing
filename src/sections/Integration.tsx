@@ -5,10 +5,16 @@ import {
     AccordionTrigger,
 } from "@/components/ui/accordion";
 import {
+    Activity,
+    BarChart3,
+    Bell,
     BookCheck,
     ChartPie,
+    DollarSign,
     FolderSync,
     Goal,
+    Plug,
+    ShieldCheck,
     Users,
     Zap,
 } from "lucide-react";
@@ -20,17 +26,61 @@ export default function Integration() {
                 <div className="container-custom border-gray-200 border-x border-solid ">
                     <div className=" border-gray-200 bg-white border-x border-l-0 border-r-0  border-solid p-0">
                         <div className="border-x border border-gray-200 min-h-[24rem]">
-                            <div className="flex flex-col items-center gap-4 mt-16 mx-20">
+                            <div className="flex flex-col items-center gap-4 mt-24 mx-20">
                                 <h1
                                     className="text-4xl md:text-6xl lg:text-5xl text-center mt8 font-medium break-normal mx-auto tracking-custom 
 "
                                 >
                                     Best practice monitoring <br />{" "}
-                                    <span className="text-slate-400">
-                                        with easy SDK install{" "}
+                                    <span className="text-slate-600">
+                                        with easy SDK installation{" "}
                                     </span>
                                 </h1>
-                                <h1 className="text-lg text-center">s</h1>
+                                <div className="flex items-center justify-center ">
+                                    <div className="max-w-(--breakpoint-lg) w-full py-24 px-6">
+                                        <div className="mt-6 md:mt-10 w-full mx-auto grid md:grid-cols-2 gap-12">
+                                            <div className="">
+                                                <Accordion
+                                                    defaultValue="item-0"
+                                                    type="single"
+                                                    className="w-full"
+                                                >
+                                                    {features.map(
+                                                        (
+                                                            {
+                                                                title,
+                                                                description,
+                                                                icon: Icon,
+                                                            },
+                                                            index
+                                                        ) => (
+                                                            <AccordionItem
+                                                                key={index}
+                                                                value={`item-${index}`}
+                                                                className="group/accordion-item data-[state=open]:border-b-1 data-[state=open]:border-slate-500"
+                                                            >
+                                                                <AccordionTrigger className="text-lg [&>svg]:hidden group-first/accordion-item:pt-0">
+                                                                    <div className="flex items-center gap-4">
+                                                                        <Icon />
+                                                                        {title}
+                                                                    </div>
+                                                                </AccordionTrigger>
+                                                                <AccordionContent className="text-[17px] leading-relaxed text-muted-foreground">
+                                                                    {
+                                                                        description
+                                                                    }
+                                                                    <div className="mt-6 mb-2 md:hidden aspect-video w-full bg-muted rounded-xl" />
+                                                                </AccordionContent>
+                                                            </AccordionItem>
+                                                        )
+                                                    )}
+                                                </Accordion>
+                                            </div>
+                                            {/* Media */}
+                                            <div className="hidden md:block w-full h-full bg-muted rounded-xl" />
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -42,82 +92,39 @@ export default function Integration() {
 
 const features = [
     {
-        icon: Goal,
-        title: "Identify Opportunities",
+        icon: Activity,
+        title: "Monitor AI Performance",
         description:
-            "Easily uncover untapped areas to explore and expand your reach effortlessly and effectively.",
+            "Track errors, drifts, and response quality in real time so you always know how your AI is performing.",
     },
     {
-        icon: BookCheck,
-        title: "Build Authority",
+        icon: DollarSign,
+        title: "Control Costs",
         description:
-            "Create valuable content that resonates, inspires trust, and positions you as an expert.",
+            "See exactly where your AI spend is going, catch runaway usage, and stay on top of your budget.",
     },
     {
-        icon: ChartPie,
-        title: "Instant Insights",
+        icon: BarChart3,
+        title: "Actionable Insights",
         description:
-            "Gain immediate, actionable insights with a quick glance, enabling fast decision-making.",
+            "Turn raw logs into clear insights that help you debug faster, improve reliability, and optimize models.",
     },
     {
-        icon: Users,
-        title: "Engage with Your Audience",
+        icon: Bell,
+        title: "Instant Alerts",
         description:
-            "Boost audience engagement with interactive features like polls, quizzes, and forms.",
+            "Get notified in Slack or email the moment something goes wrong, so you can act before users notice.",
     },
     {
-        icon: FolderSync,
-        title: "Automate Your Workflow",
+        icon: Plug,
+        title: "Seamless Integration",
         description:
-            "Streamline your processes by automating repetitive tasks, saving time and reducing effort.",
+            "Drop in a simple SDK or API and start monitoring immediately — no complex setup required.",
     },
     {
-        icon: Zap,
-        title: "Accelerate Growth",
+        icon: ShieldCheck,
+        title: "Protect User Trust",
         description:
-            "Supercharge your growth by implementing strategies that drive results quickly and efficiently.",
+            "Deliver reliable AI experiences that keep customers confident and engaged with your product.",
     },
 ];
-const Features04Page = () => {
-    return (
-        <div className="min-h-screen flex items-center justify-center">
-            <div className="max-w-(--breakpoint-lg) w-full py-12 px-6">
-                <h2 className="text-4xl md:text-5xl md:leading-14 font-semibold tracking-[-0.03em] max-w-lg">
-                    Boost Your Strategy with Smart Features
-                </h2>
-                <div className="mt-6 md:mt-10 w-full mx-auto grid md:grid-cols-2 gap-12">
-                    <div>
-                        <Accordion
-                            defaultValue="item-0"
-                            type="single"
-                            className="w-full"
-                        >
-                            {features.map(
-                                ({ title, description, icon: Icon }, index) => (
-                                    <AccordionItem
-                                        key={index}
-                                        value={`item-${index}`}
-                                        className="group/accordion-item data-[state=open]:border-b-2 data-[state=open]:border-primary"
-                                    >
-                                        <AccordionTrigger className="text-lg [&>svg]:hidden group-first/accordion-item:pt-0">
-                                            <div className="flex items-center gap-4">
-                                                <Icon />
-                                                {title}
-                                            </div>
-                                        </AccordionTrigger>
-                                        <AccordionContent className="text-[17px] leading-relaxed text-muted-foreground">
-                                            {description}
-                                            <div className="mt-6 mb-2 md:hidden aspect-video w-full bg-muted rounded-xl" />
-                                        </AccordionContent>
-                                    </AccordionItem>
-                                )
-                            )}
-                        </Accordion>
-                    </div>
-                    {/* Media */}
-                    <div className="hidden md:block w-full h-full bg-muted rounded-xl" />
-                </div>
-            </div>
-        </div>
-    );
-};
