@@ -38,7 +38,7 @@ export default function Hero() {
                 />
             </div> */}
 
-            <div className="container-custom  border-gray-200 border-x border-y  border-solid b">
+            <div className="container-custom border-x border-y  border-solid b">
                 {/*  Content Layer */}
                 <div className=" relative z-10">
                     {/* <div className="flex justify-center">

@@ -7,9 +7,9 @@ export default function Functional() {
     return (
         <>
             <section>
-                <div className="container-custom border-gray-200 border-x border-y border-solid ">
+                <div className="container-custom border-gray-200 border-x border-t-0 border-solid ">
                     <div className=" border-gray-200 bg-white border-x border-l-0 border-r-0  border-solid p-0">
-                        <div className="border-x min-h-[4rem]"></div>
+                        <div className="border-x min-h-[4rem] bg-slate-50"></div>
                         <div className="border-x border border-gray-200 min-h-[24rem]">
                             <div className="flex flex-col items mt-16 mx-20">
                                 <h1

@@ -1,9 +1,9 @@
 import slackmessageimg from "@/assets/images/SlackMessage.png";
 export default function TrackersSection() {
     return (
-        <section>
-            <div className="border-y min-h-[4rem]"></div>
-            <div className="container-custom-spatial border border-0">
+        <section className="bg-slate-50">
+            <div className="border-y min-h-[6rem] bg-slate-50"></div>
+            <div className="container-custom-spatial border border-0 bg-white">
                 <div className="grid grid-grid-cols-1 lg:grid-cols-2 gap-16 ">
                     <div className="border border-t-0 items-center">
                         <div className="">
@@ -49,6 +49,7 @@ export default function TrackersSection() {
                     </div>
                 </div>
             </div>
+            <div className="border-y min-h-[6rem] bg-slate-50"></div>
         </section>
     );
 }
