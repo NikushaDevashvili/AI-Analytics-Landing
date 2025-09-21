@@ -1,3 +1,11 @@
+import {
+    Braces,
+    LucideDollarSign,
+    LucideMountain,
+    MessagesSquareIcon,
+    UsersIcon,
+} from "lucide-react";
+
 export default function Summaries() {
     return (
         <>
@@ -14,8 +22,8 @@ export default function Summaries() {
                         </h2>
                     </div>
                 </div>
-                <div className="max-w-4xl bg-red-400 mx-auto">
-                    <div className="flex flex-row justify-between items-center pt-8">
+                <div className="max-w-4xl bg-red-400 mx-auto px-6">
+                    <div className="flex flex-row justify-between items-center pt-8 ">
                         <h2 className="text-2xl">
                             <b>What Happend Yesterday</b>
                         </h2>
@@ -24,15 +32,62 @@ export default function Summaries() {
                     <p>
                         check the comprehensive report of what happend yesterday
                     </p>
-                    <div className="grid grid-cols-3 py-8 ">
-                        <div className="p-8 border border-l-0">
+                    <div className="">
+                        <h1 className="text-xl">Wins</h1>
+                        <p>
+                            Users liked the assistant's tone and appreciated the
+                            life advice.
+                        </p>
+                    </div>
+                    <div className="grid md:grid-cols-3 grid-cols-1 py-8 ">
+                        <div className="flex items-center gap-x-2 px-4 py-8 border">
+                            <div className="border p-4">
+                                <MessagesSquareIcon />
+                            </div>
                             <b>Messages:</b> 325 (+9%)
                         </div>
-                        <div className="p-8 border border-l-0">
+
+                        <div className="flex items-center gap-x-2 px-4 py-8 border md:border-l-0">
+                            <div className="border p-4">
+                                <UsersIcon />
+                            </div>
                             <b>Users:</b> 78 (+5%)
                         </div>
-                        <div className="p-8 border border-l-0 border-r-0">
+
+                        <div className="flex items-center gap-x-2 px-4 py-8 border md:border-l-0">
+                            <div className="border p-4">
+                                <UsersIcon />
+                            </div>
                             <b>Issues:</b> 3 (42 events)
+                        </div>
+                    </div>
+                    <div className="grid-cols-1">
+                        <div className="flex flex-row justify-between border p-4">
+                            <div className="flex gap-2 items-center">
+                                <Braces />
+                                <p>Tool calls: </p>
+                            </div>
+                            <p>
+                                Most used calls: get_payment_tool,
+                                get_userschema
+                            </p>
+                        </div>
+                        <div className="flex flex-row justify-between border p-4">
+                            <div className="flex gap-2 items-center">
+                                <LucideMountain />
+                                <p>Rate Limit: </p>
+                            </div>
+                            <p>
+                                System hit 4 rate limits: this caused dropped
+                                requests
+                            </p>
+                        </div>
+                        <div className="flex flex-row justify-between border p-4">
+                            <div className="flex gap-2 items-center">
+                                <LucideDollarSign />
+                                <p>Cost Overrun: </p>
+                            </div>
+                            <p>No cost overruns detected yesterday</p>
                         </div>
                     </div>
                 </div>
